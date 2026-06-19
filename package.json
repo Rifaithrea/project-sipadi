@@ -1,0 +1,25 @@
+{
+  "name": "sipadi",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SIPADI - Sistem Pengarsipan dan Disposisi Inspektorat",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace @sipadi/api\" \"npm run dev --workspace @sipadi/web\"",
+    "dev:api": "npm run dev --workspace @sipadi/api",
+    "dev:web": "npm run dev --workspace @sipadi/web",
+    "db:schema": "npm run schema --workspace @sipadi/api",
+    "db:seed": "npm run seed --workspace @sipadi/api",
+    "lint": "npm run lint --workspace @sipadi/web",
+    "start": "npm run start --workspace @sipadi/api"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "react-select": "^5.10.2"
+  }
+}
